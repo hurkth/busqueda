@@ -1,0 +1,49 @@
+//muestra escritura, nom notario
+
+SELECT cod_sct, escrituras1.cod_not,notarios.pat_not,notarios.mat_not,fec_doc, nom_bie, can_fol, num_fol
+FROM escrituras1,notarios
+WHERE cod_sct =15 and escrituras1.cod_not=notarios.cod_not
+
+
+//busuqeda otrognate --- muestra favorecido
+
+SELECT escrifavor1.cod_rel, escrituras1.cod_sct, escrituras1.nom_bie,escrifavor1.cod_inv, involucrados1.Pat_inv, involucrados1.Mat_inv
+FROM escrifavor1, involucrados1, escrituras1
+WHERE escrifavor1.cod_rel=580
+AND escrifavor1.cod_inv = involucrados1.Cod_inv 
+AND escrifavor1.cod_sct=escrituras1.cod_sct
+
+SELECT escrifavor1.cod_rel, escrituras1.cod_sct, escrituras1.nom_bie,escrituras1.fec_doc,escrituras1.can_fol,escrituras1.num_fol,escrifavor1.cod_inv, involucrados1.Pat_inv, involucrados1.Mat_inv
+FROM escrifavor1, involucrados1, escrituras1
+WHERE escrifavor1.cod_rel=580
+AND escrifavor1.cod_inv = involucrados1.Cod_inv 
+AND escrifavor1.cod_sct=escrituras1.cod_sct
+
+//busuqeda por favorecido
+
+SELECT escrifavor1.cod_rel, escrituras1.cod_sct, escrituras1.nom_bie,escrituras1.fec_doc,escrituras1.can_fol,escrituras1.num_fol,escrifavor1.cod_inv, involucrados1.Pat_inv, involucrados1.Mat_inv,involucrados1.Nom_inv
+FROM escrifavor1, involucrados1, escrituras1
+WHERE involucrados1.Cod_inv=4
+AND escrifavor1.cod_inv = involucrados1.Cod_inv 
+AND escrifavor1.cod_sct=escrituras1.cod_sct
+
+//involucrdos y favor
+
+SELECT escrifavor1.cod_rel, escrituras1.cod_sct, escrituras1.nom_bie,escrituras1.fec_doc,escrituras1.can_fol,escrituras1.num_fol,escrifavor1.cod_inv,escriotor1.cod_inv,escriotor1.cod_rel, involucrados1.Pat_inv, involucrados1.Mat_inv,involucrados1.Nom_inv
+FROM escrifavor1, involucrados1, escrituras1,escriotor1
+WHERE involucrados1.Cod_inv=4
+AND escrifavor1.cod_inv = involucrados1.Cod_inv 
+AND escrifavor1.cod_sct=escrituras1.cod_sct
+AND escriotor1.cod_sct=escrituras1.cod_sct
+
+
+//involucrads favor notrios
+
+SELECT escrifavor1.cod_rel, escrituras1.cod_sct, escrituras1.nom_bie,escrituras1.fec_doc,escrituras1.can_fol,escrituras1.num_fol,escrifavor1.cod_inv,escriotor1.cod_inv,escriotor1.cod_rel, involucrados1.Pat_inv, involucrados1.Mat_inv,involucrados1.Nom_inv, notarios.pat_not,notarios.mat_not,notarios.nom_not
+FROM escrifavor1, involucrados1, escrituras1,escriotor1,notarios
+WHERE involucrados1.Cod_inv=4
+AND escrifavor1.cod_inv = involucrados1.Cod_inv 
+AND escrifavor1.cod_sct=escrituras1.cod_sct
+AND escriotor1.cod_sct=escrituras1.cod_sct
+AND escrituras1.cod_not=notarios.cod_not
+
