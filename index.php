@@ -93,25 +93,27 @@
             </form>    
         </div>
         
+        <aside>
         <div id="menu">
             <ul>
                 <li><a href="javascript:Enviar('forms/buscar_otorgante.html','contenido')" title="1">Busqueda por Otorgante</a></li>
                 <li><a href="javascript:Enviar('forms/buscar_favorecido.html','contenido')" title="2">Busqueda por Favorecido</a></li>
                 <li><a href="javascript:Enviar('forms/buscar_fecha.html','contenido')" title="2">Busqueda por Fecha</a></li>
                 <li><a href="javascript:Enviar('forms/buscar_nombre_bien.html','contenido')" title="2">Busqueda por Nombre del bien</a></li>
-                <li>Busqueda por Otorgante Juridico</li>
-                <li>Busqueda por Favorecido Juridico</li>
+                <li><a href="javascript:Enviar('forms/buscar_otor_juridico.html','contenido')" title="2">Busqueda por Otorgante Juridico</a></li>
+                <li><a href="javascript:Enviar('forms/buscar_fav_juridico.html','contenido')" title="2">Busqueda por Favorecido Juridico</a></li>
                 
             </ul>
-            
-            
+           
         </div>
-            
+         </aside>
         
+        <section>
        <div id="contenido" >           
           
             
         </div>
+            </section>
         
 
         <?php
