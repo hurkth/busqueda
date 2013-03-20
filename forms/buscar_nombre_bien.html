@@ -9,10 +9,13 @@
         <h2>BUSQUEDA POR NOMBRE DEL BIEN</h2>
     </header>
     <body>
-        <form action="controler/conectDB.php" class="busqueda_bien">
-       Nombre del Bien<input type="search" name="nombre_bien">
-       <input type="submit">
-        </form>
+        <form id="form_bien" method="post" action="model/busca_nombre.php">
+            Nombre del bien:<input type="search" name="nombre_bien">
+            
+            <input type="submit" value="Buscar">
+            </form>    
         
     </body>
+    
+    
 </html>

@@ -4,67 +4,19 @@
         <script type="text/javascript" src="js/ajax.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title></title>
-        <script type="text/javascript" languaje="javascript">
-            function idElemento(){
-                var elemento = document.getElementById("elemento").value;
-               
-            switch(elemento){
-                    
-                    case "1":
-                        document.write("Opcion 1");
-                        break;
-                    case "2":
-                        document.write("Opcion 2");
-                        break;
-                    case "3":
-                        document.write("Opcion 3");
-                        break;
-                    case "4":
-                        document.write("Opcion 4");
-                        break;
-                    case "5":
-                        document.write("Opcion 5");
-                        break;
-                    case "6":
-                        document.write("Opcion 6");
-                        break;
-                    case "7":
-                        document.write("Opcion 7");
-                        break;
-                    case "8":
-                        document.write("Opcion 8");
-                        break;
-                }
-            }
-          
-        </script>
         <style type="text/css">
             
         </style>
     </head>
     
-    <header>
-            <h1>Busqueda de Fondo Notarial</h1>        
+    <header id="principal">
+            <span id="titulo">Busqueda Fondo Notarial</span>       
     </header>
     
     <body>
          <form method="post" action="handler.php">
         </form>
-        
-    
-        
-        <select name="menu_busqueda" id="elemento" onChange="MM_jumpMenu('parent',this,0)" onclick="javascript: idElemento();">
-            <option value="0" selected>Seleccione</option>
-            <option value="1">Busqueda por Otogante</option>
-            <option value="2">Busqueda por Favorecido</option>
-            <option value="3">Busqueda por Ototgante Juridico</option>
-            <option value="4">Busqueda por Favorecido Juridico</option>
-            <option value="5">Busqueda por Fecha</option>
-            <option value="6">Busqueda por Nombre del Bien </option>
-            <option value="7">Busqueda por Codigo del bien </option>
-            <option value="8">Busqueda por Notario </option>
-        </select>
-        
+                
         <div id="otorgantes" style="display: none;">
             <form>
                 <label for="nombre">Nombre:</label>
@@ -122,11 +74,11 @@
         //include 'controler/busqueda_otorgante.php';
       
         
-       // $con=new conectDB;
+     //$con=new conectDB;
         //$con->consult("SELECT * FROM usuarios");
       
         //echo "busqueeda por bien<br>";
-       // $con->busqueda_bien("FUNDO RUSTICO");
+      //$con->busqueda_bien("FUNDO RUSTICO");
         
        // echo "<br>consulta por fecha<br>";
        // $con->busqueda_fecha("1998-07-22");
@@ -146,3 +98,36 @@
         Equipo de informatica, Archivo Regional Puno 2013
     </footer>
 </html>
+<style type="text/css">
+body {
+
+} #principal {
+
+    
+display: block;
+width: 500px;
+margin: 50px auto;
+padding: 15px;
+text-align: center;
+text-color:blue;
+border: 1px solid #999999;
+background: #DDDDDD;
+-moz-border-radius: 20px;
+-webkit-border-radius: 20px;
+border-radius: 20px;
+-moz-box-shadow: rgb(150,150,150) 5px 5px 10px;
+-webkit-box-shadow: rgb(150,150,150) 5px 5px 10px;
+box-shadow: rgb(150,150,150) 5px 5px 10px;
+background: -webkit-linear-gradient(top, #FFFFFF, #006699);
+background: -moz-linear-gradient(top, #FFFFFF, #006699);
+-moz-transform: scale(2);
+-webkit-transform: scale(2);
+
+-moz-transition: -moz-transform 1s ease-in-out 0.5s;
+-webkit-transition: -webkit-transform 1s ease-in-out 0.5s;
+} #principal:hover{
+-moz-transform: rotate(5deg);
+-webkit-transform: rotate(5deg);
+}
+ 
+</style>

@@ -20,10 +20,10 @@ class mostrar {
 
 class conectDB {
     
-   var $server = "localhost";
-    var $user = "root";
-    var $pass = "";
-    var $data_base = "dbarp";
+    private $server = "localhost";
+    private  $user = "root";
+    private $pass = "";
+    private $data_base = "dbarp";
     
     function __construct() {
         $coneccion= mysql_connect($this->server, $this->user, $this->pass)
@@ -59,11 +59,22 @@ class conectDB {
                 echo "<li>".$lista['cod_sct']."--".$lista['nom_bie']."--".$lista['cod_not'];
     }
     
-    function busqueda_otorgante1($ap_paterno,$ap_materno,$nombre){
-    $link= mysql_query("SELECT *FROM `involucrados1`WHERE `Pat_inv` LIKE '". $ap_paterno."' AND `Mat_inv` LIKE '".$ap_materno."'AND `Nom_inv` LIKE'".$nombre."'");       
+    function buscarsql($ap_paterno,$ap_materno,$nombre){
+       
+       if(!is_null($ap_paterno)){
+            if(!is_null($ap_materno)){
+               if(!is_null($nombre)){                 
+                   $link= mysql_query("SELECT *FROM `involucrados1` WHERE `Pat_inv` LIKE '". $ap_paterno."' AND `Mat_inv` LIKE '".$ap_materno."'AND `Nom_inv` LIKE'".$nombre."'");       
+                } 
+                else{
+                   $link= mysql_query("SELECT *FROM `involucrados1` WHERE `Pat_inv` LIKE '". $ap_paterno."' AND `Mat_inv` LIKE '".$ap_materno."'");       
+                }                   
+            }
+            
+            }
        while($lista= mysql_fetch_array($link))
        echo "<li>".$lista['Cod_inv']."--".$lista['Pat_inv']."--".$lista['Mat_inv']."--".$lista['Nom_inv'];
-    
+       
     }
     
     
